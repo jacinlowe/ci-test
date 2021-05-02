@@ -2,7 +2,7 @@ name: Build ionic angular app and deploy on firebase
 on:
   push:
     branches:
-      - master
+      - nowhere
 
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: npm Install
+        run: npm install
       - name: Build
         run: npm run build
       # - name: Run Test
