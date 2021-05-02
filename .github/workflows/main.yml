@@ -31,8 +31,8 @@ jobs:
 
       # - name: Checkout Repo
       #   uses: actions/checkout@master
-      # - name: Install Dependencies
-      #   run: npm install
+      - name: Install Dependencies
+        run: npm install
       - name: Build
         run: npm run build
       # - name: Run Test
