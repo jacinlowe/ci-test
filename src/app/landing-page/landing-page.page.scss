@@ -1,0 +1,138 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#buttons {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15vmax;
+  transform: translateY(-25%);
+}
+
+#square{
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
+$size: 200px;
+#triangle-up{
+
+  display: inline-block;
+  // size: 100px;
+  width: $size;
+  height: $size;
+  background:red;
+  border: 20px solid green;
+  clip-path: polygon(
+  50% 0%,
+  61% 35%,
+  98% 35%,
+  68% 57%,
+  79% 91%,
+  50% 70%,
+  21% 91%,
+  32% 57%,
+  2% 35%,
+  39% 35%);
+
+}
+#starlist{
+  position: relative;
+  top: 50%;
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+}
+:root{
+  --newsize: 50%;
+}
+
+#starsvg{
+  $new-size:50%;
+
+
+  width: var(--newsize);
+  height: var(--newsize);
+  opacity: 80%;
+}
+
+$basecolor:rgb(255, 221, 67);
+
+#star-five {
+  margin: 50px 0;
+  position: relative;
+  display: block;
+  color: red;
+  width: 0px;
+  height: 0px;
+  border-right:  100px solid transparent;
+  border-bottom: 70px  solid red;
+  border-left:   100px solid transparent;
+  -moz-transform:    rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  -ms-transform:     rotate(35deg);
+  -o-transform:      rotate(35deg);
+
+}
+#star-five::before {
+  border-bottom: 80px solid $basecolor;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -45px;
+  left: -65px;
+  display: block;
+  content: "";
+  transform: rotate(-35deg);
+}
+
+#star-five::after{
+  position: absolute;
+  display: block;
+  color: $basecolor;
+  opacity: 0.3;
+  top: 3px;
+  left: -105px;
+  width: 0;
+  height: 0;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid $basecolor;
+  border-left: 100px solid transparent;
+
+  transform: rotate(-70deg);
+  content: "";
+}
+
+#star-code{
+  content: "\2605";
+}

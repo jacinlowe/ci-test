@@ -1,0 +1,26 @@
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+  margin: 10px;
+  width: 90%;
+  height: 100px;
+  padding: 5px;
+  // border: 1px solid black;
+  .button{
+    flex-basis:auto;
+  }
+
+}
+
+ion-row{
+  ion-col{
+    display: inline-block;
+    ion-item{
+      display: inline;
+    }
+  }
+}

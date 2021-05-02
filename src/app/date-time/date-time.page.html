@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>date-time</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row">
+    <div *ngFor="let month of monthArray">
+      <ion-item>
+        <ion-button expand="block" fill="solid" shape="round" (click)="monthClick(month.value)" i>
+          <p>{{month.display}}</p>
+          <!-- <ion-datetime display-format="MMM YYYY" value={{item}}></ion-datetime> -->
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let day of dayArray">
+      <ion-item>
+        <ion-button expand="block" fill="solid" shape="round" (click)="dayClick(day.day)">
+          <p>{{day.weekday}}</p>
+          <p>{{day.day}}</p>
+          <!-- <ion-datetime display-format="MMM YYYY" value={{item}}></ion-datetime> -->
+        </ion-button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let morning of ['am','pm']">
+      <span *ngFor="let time of timeArray">
+        <ion-item>
+          <ion-button expand="block" fill="solid" shape="round" (click)="timeClick(time, morning)">
+            <p>{{time}}:00 {{morning}}</p>
+
+            <!-- <ion-datetime display-format="MMM YYYY" value={{item}}></ion-datetime> -->
+          </ion-button>
+        </ion-item>
+      </span>
+    </div>
+  </div>
+  <ion-icon name="star" isActive="false"></ion-icon>
+</ion-content>
