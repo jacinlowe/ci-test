@@ -79,6 +79,7 @@ dateArray(){
   }
     const currentDay = date.getDate();
     const daysInMonth = new Date(date.getFullYear(),date.getMonth(),0).getDate();
+    // eslint-disable-next-line prefer-const
     let daysArray = [];
     const maxDays = 10;
     for (let i = 1; i < daysInMonth; i++){
