@@ -1,0 +1,26 @@
+name: Build ionic angular app and deploy on firebase
+on:
+  push:
+    branches:
+      - master
+
+
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: npm Install
+      - name: Build
+        run: npm run build
+      # - name: Run Test
+      #   run: npm run test
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v1.5.0
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: 1//0dDHTmuiRH7dNCgYIARAAGA0SNwF-L9Ir84URdnQGYoJr3gONMTGMk5k__OQ9eN5tAr18JGhmlnWNGshBA9S0qbJSFxImGQqSZZc
