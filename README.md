@@ -1,1 +1,1 @@
-[ ![build status ] (https://github.com/coryrylan/angular-github-actions/workflows/Build/badge.svg)] (https://github.com/coryrylan/angular-github-actions/actions)
+[![build status](https://github.com/jacinlowe/ci-test/workflows/main.yml/badge.svg)](https://github.com/coryrylan/angular-github-actions/actions)
