@@ -2,18 +2,36 @@ name: Build ionic angular app and deploy on firebase
 on:
   push:
     branches:
-      - nowhere
+      - master
 
 
 jobs:
   build:
     name: Build & Deploy
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Install Dependencies
-        run: npm install
+      - name: Check for npm Cache
+        uses: actions/checkout@v1
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version }}
+
+      # - name: Checkout Repo
+      #   uses: actions/checkout@master
+      # - name: Install Dependencies
+      #   run: npm install
       - name: Build
         run: npm run build
       # - name: Run Test
